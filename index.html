@@ -1,35 +1,67 @@
-<!DOCTYPE html>
 <html>
 <head>
-
-    <script src="p5/p5.js"></script>
-    <script src="p5/addons/p5.sound.js"></script>
-    <script src="p5/addons/p5.dom.js"></script>
-    <script src="source.js"></script>
-
-    <title>Homework QWERTY Keyboard</title>
+    
+    <title> MP3 Player - Carlos Magaña  </title>
+    <script src ="NexusUI.js"></script>
+    <script src="p5.js"></script>
+    <script src="p5.sound.js"></script>
+    <script src="p5.dom.js"></script>
+    <script src="source.js"></script> 
+    <link rel="stylesheet" type="text/css" href="div.css" media="screen" />
+    
 
 </head>
 
-<h1><font size="6" color="white">QWERTY KEYBOARD</font></h1>
-<body bgcolor = "grey">
-
-    <p><font size="5" color="white">
-        This is the first implementation of HTML using Javascript for us to do a QWERTY Keyboard that you see right here.
-    </font></p>
+<div>
+<body>
     
-    <p><font size="5" color="white">
-            It works using the letters and numbers from the keyboard.
-        </font></p>
-    
-    <img src="qwerty_keyboard.png" alt="These are the keys that you can press" align="center">
 
-    <p><b>
-        ------------This Is The Master Volume-------------
-    </b></p>
+<body bgcolor = "green"  ></body>
+<font face="Comic Sans MS "   size = 5 color= "white">
+        
+    <h1 align="left" style="font-size:50px;color:black"> MP3-Player Prototype</h1>
+   
+
+</font>
+
+         <p style = "font-size:20px;color:black";>          
+        Este es un prototipo de página web/MP3 la cual es simple. Solo seleccionas la cancion que desees
+        escuchar y le pones Play. Cuenta con pausa y un boton de stop para regresarla al principio,
+        un boton de random y un loop el cual tu controlas por medio de 2 sliders verticales. 
+        Y cuenta con un Master Volume horizontal.
+        NOTA: Antes de iniciar con un LOOP, hacer click en STOP!
+      
+       <h1 style = "font-size:20px;color:black">-Slider Derecho (Indica en que punto de la canción inicia el loop)</h1>
+       <h1 style = "font-size:20px;color:black">-Slider Izquierdo (Controla la duración del loop)</h1>
+       <h1 style = "font-size:20px;color:black">-Slider Horizontal(Volumen general)</h1>
+       </p>
+
+<div id="slider" ></div>
+    <script>
+      var slider = new Nexus.Slider('#slider',
+    {'size': [50,100] ,  
+     min: 0,
+     max: 100,});
+      slider.on('change',function(v) {
+        console.log(v);
+          start=v;
+      });
+    </script>
+
+
+<div id="slider2" ></div>
+    <script>
+      var slider = new Nexus.Slider('#slider2',
+    {'size': [50,100] ,  
+     min: 2,
+     max: 50,});
+
+      slider.on('change',function(r) {
+        console.log(r);
+          dur=r;
+      });
+    </script>
+</div>
 
 </body>
 </html>
-
-
-
